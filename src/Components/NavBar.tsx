@@ -1,22 +1,41 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import headerlogo from '../assets/headerbg.png'
+// import headerlogo from '../assets/headerbg.png'
 import { Menu, MenuItem, useMediaQuery } from "@mui/material";
 import {
     IconButton,
   } from "@mui/material";
   import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const pages = ["EnchantedPages.Ai", "Visualizer", "My Stories", "Contact"];
+const pages = 
+  [
+    {
+      title: "EnchantedPages.Ai",
+      link: "/"
+    },
+     {
+      title: "Visualizer",
+      link: '/visualizer'
+    }, 
+     {
+      title:"My Stories",
+      link: "/my-stories"
+    }, 
+     {
+      title:"Contact",
+      link: "/contact"
+    }
+    ];
 
 
-function NavBar({children}:any) {
+function NavBar({children, background}:any) {
     const isMobile = useMediaQuery('(max-width:900px)');
     const mediumScreen = useMediaQuery('(min-width:1201px) and (max-width:1512px)');
     const [anchorEl, setAnchorEl] = useState(null);
-
+    
     const handleMenuOpen = (event: any) => {
       setAnchorEl(event.currentTarget);
     };
@@ -25,9 +44,10 @@ function NavBar({children}:any) {
       setAnchorEl(null);
     };
   return (
-    <Box
+    <Box className="abc"
  sx={{
-    background: `linear-gradient(0deg, rgba(92, 71, 40, 0.14) 0%, rgba(92, 71, 40, 0.14) 100%), url(${headerlogo})`,
+    // background: `linear-gradient(0deg, rgba(92, 71, 40, 0.14) 0%, rgba(92, 71, 40, 0.14) 100%), url(${headerlogo})`,
+    background: `linear-gradient(0deg, rgba(92, 71, 40, 0.14) 0%, rgba(92, 71, 40, 0.14) 100%), url(${background})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '50% 50%',
@@ -43,7 +63,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
         alignItems: "center",
         borderRadius: "30px",
         backgroundColor: "#ede1c7",
-        width: isMobile ? "100%" :"70%",
+        width: isMobile ? "100%" : "70%",
         boxShadow:"2px 2px 5px 0px rgba(0, 0, 0, 0.5)"
         
       }}
@@ -51,23 +71,37 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
       <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
         {pages.map((page, index) => (
           <>
-            <Typography
-              key={page}
-              sx={{
-                color: "#A9895D",
-                fontSize: index=== 0 ? "18px" : "16px",
-                fontWeight: index=== 0 ?  900 :400,
-                lineHeight:"20px",
-                marginRight: index === pages.length - 1 ? "0" : "20px",
-                marginLeft: index === 0 ? "0" : "20px",
-                cursor: "pointer",
-                "&:hover": {
-                  color: "#5C4033",
-                },
-              }}
-            >
-              {page}
-            </Typography>
+          <Link 
+            to={page.link}
+            style={{
+              color: "#A9895D",
+              fontSize: index=== 0 ? "18px" : "16px",
+              fontWeight: index=== 0 ?  900 :400,
+              lineHeight:"20px",
+              marginRight: index === pages.length - 1 ? "0" : "20px",
+              marginLeft: index === 0 ? "0" : "20px",
+              cursor: "pointer",
+              textDecoration:"none"
+            }}
+          >
+              <Typography
+                key={page.title}
+                sx={{
+                  color: "#A9895D",
+                  fontSize: index=== 0 ? "18px" : "16px",
+                  fontWeight: index=== 0 ?  900 :400,
+                  lineHeight:"20px",
+                  marginRight: index === pages.length - 1 ? "0" : "20px",
+                  marginLeft: index === 0 ? "0" : "20px",
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#5C4033",
+                  },
+                }}
+              >
+                {page.title}
+              </Typography>
+            </Link>
             <span style={{ color: "#A9895D" }}>
               {index !== pages.length - 1 && "|"}
             </span>
@@ -88,20 +122,31 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
         onClose={handleMenuClose}
       >
         {pages.map((page) => (
-          <MenuItem key={page} onClick={handleMenuClose}>
-            <Typography
-              sx={{
+          <MenuItem key={page.title} onClick={handleMenuClose}>
+            <Link 
+              to={page.link}
+              style={{
                 color: "#A9895D",
                 fontSize: "16px",
                 fontWeight: 400,
                 cursor: "pointer",
-                "&:hover": {
-                  color: "black",
-                },
+                textDecoration:"none"
               }}
             >
-              {page}
-            </Typography>
+              <Typography
+                sx={{
+                  color: "#A9895D",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "black",
+                  },
+                }}
+              >
+                {page.title}
+              </Typography>
+            </Link>
           </MenuItem>
         ))}
       </Menu>

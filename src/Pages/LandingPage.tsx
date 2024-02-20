@@ -44,7 +44,7 @@ const LandingPage = () => {
   ];
   return (
     <>
-      <NavBar>
+      <NavBar background={headerbg}>
         <Box
           sx={{
             p: isMobile ? "2px 5%" : mediumScreen ? "2px 5%" : "2px 5%",
@@ -229,7 +229,8 @@ const LandingPage = () => {
           sx={{
             background: `linear-gradient(0deg, rgba(48, 48, 48, 0.20) 0%, rgba(48, 48, 48, 0.20) 100%), url(${headerbg})`,
             height: isMobile ? "350px" : "909px",
-            backgroundSize: "cover", 
+            backgroundSize: "cover"
+            , 
             display:"flex",
             flexDirection:"column",
             alignItems:"center",

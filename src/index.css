@@ -1,7 +1,8 @@
 @import url('https://fonts.cdnfonts.com/css/im-fell-english');
 *{
   padding: 0;
-  font-family: 'IM Fell English' !important; 
+  font-family: 'IM Fell English' !important;
+  box-sizing: border-box; 
 }
 
 

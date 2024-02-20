@@ -1,0 +1,26 @@
+.create-story-with-storyline-textfield{
+    margin-bottom: 40px
+}
+
+.create-story-with-storyline-textfield label{
+    font-size: 20px;
+    color: #252525
+}
+
+.create-story-with-storyline-textarea, 
+.create-story-with-storyline-inputfield{
+    background-color: rgba(164, 117, 65, 0.28);
+    border-color: rgba(35, 35, 35, 0.57);
+    width: 100%;
+    padding:20px 10px;
+    border: 1px solid;
+    margin-top:15px;
+    font-size: 20px;
+    color: #252525
+}
+
+.create-story-with-storyline-textarea:focus-visible, 
+.create-story-with-storyline-inputfield:focus-visible{
+    /* border-color: blue; */
+    outline: none;
+}
