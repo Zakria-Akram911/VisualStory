@@ -1,0 +1,31 @@
+.payment-heading::after{
+    content:"";
+    width: 230px;
+    height: 1px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -260px;
+}
+.payment-heading::before{
+    content:"";
+    width: 230px;
+    height: 1px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -255px;
+}
+
+@media(max-width: 900px){
+    .payment-heading::after{
+        width: 70px;
+        left: -90px;
+    }
+    .payment-heading::before{
+        width: 70px;
+        right: -85px;
+    }
+}

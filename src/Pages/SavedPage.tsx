@@ -23,7 +23,7 @@ const SavedPage = () => {
                 backgroundSize:"cover"
               }}
             >
-              okay
+              
             </Box>
           </Box>
         </Box>

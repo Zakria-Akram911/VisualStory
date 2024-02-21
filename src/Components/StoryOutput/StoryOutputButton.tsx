@@ -1,16 +1,14 @@
-import { Box, Button, Typography, useMediaQuery } from "@mui/material"
-import ButtonRing from '../assets/ButtonRing.svg'
+import { Box, Typography, Button, useMediaQuery } from "@mui/material"
+import React from "react"
 
+interface ButtonText {
+    buttontext: string
+}
 
-const CustomizeButton = ({buttontext, textStyle, btnPadding} : any) => {
-  const mediumScreen = useMediaQuery('(min-width:1201px) and (max-width:1512px)');
-  const isMobile = useMediaQuery('(max-width:900px)');
+const StoryOutputButton : React.FC<ButtonText> = ({buttontext}) => {
+    const mediumScreen = useMediaQuery('(min-width:1201px) and (max-width:1512px)');
+    const isMobile = useMediaQuery('(max-width:900px)');
   return (
-    <Box
-    sx={{
-        display:"inline-flex",
-        flexDirection:"column",
-    }}>
     <Button
       sx={{
         borderRadius: "9px",
@@ -24,7 +22,8 @@ const CustomizeButton = ({buttontext, textStyle, btnPadding} : any) => {
     >
       <Box
         sx={{
-          p: btnPadding ? btnPadding : mediumScreen ? "0px 20px": isMobile?  "0px 10px":"0px 25px",
+        //   p: mediumScreen ? "0px 20px": isMobile?  "0px 10px":"0px 25px",
+          width: isMobile ? "100px" : mediumScreen ? "200px" : "270px",
           borderRadius: "9px",
           border: "3px solid #A67334",
           background:
@@ -38,7 +37,7 @@ const CustomizeButton = ({buttontext, textStyle, btnPadding} : any) => {
             fontSize: isMobile? "16px" : mediumScreen ? "18px" :"25px",
             fontWeight: 400,
             lineHeight: isMobile? "45px":mediumScreen ?"40px":"58px",
-            textTransform: textStyle ? textStyle :  'none',
+            textTransform: 'uppercase',
           }}
         >
           {buttontext}
@@ -46,9 +45,7 @@ const CustomizeButton = ({buttontext, textStyle, btnPadding} : any) => {
       </Box>
     
     </Button>
-    <img src={ButtonRing} width="100px" style={{alignSelf:"center",marginTop:"-8px",zIndex:"1"}}/>
-    </Box>
   )
 }
 
-export default CustomizeButton
+export default StoryOutputButton
