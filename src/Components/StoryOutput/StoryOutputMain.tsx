@@ -62,7 +62,7 @@ const StoryOutputMain = () => {
         <Box className="story-output-content"
             sx={{
                 maxWidth:mediumScreen ? "1100px" : "1300px", 
-                m:"40px auto"
+                m:isMobile? "20px auto" : "40px auto"
 
             }}
         >
@@ -78,7 +78,7 @@ const StoryOutputMain = () => {
                 <Box 
                     className="story-all-content"
                     sx={{
-                        padding:isMobile ? "20px 20px 20px 80px" : "100px 130px"
+                        padding:isMobile ? "40px 20px 40px 80px" : "100px 130px"
                     }}
                 >
                     <Box className="story-title">

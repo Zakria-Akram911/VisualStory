@@ -26,7 +26,8 @@ const CreateStory = () => {
         <Box sx={{display:"flex", justifyContent:"center", position: "relative"}}>
             <Box sx={{width: isMobile ? "90%" : "80%", zIndex:2}}>
                 {/* Main Component for the Page Content */}
-                <CreateStoryMain  formSubmitted={formSubmitted} setFormSubmitted= {setFormSubmitted}/>
+                {/* <CreateStoryMain  formSubmitted={formSubmitted} setFormSubmitted= {setFormSubmitted}/> */}
+                <CreateStoryMain  formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}/>
 
                 <Box sx={{textAlign:"center", mt:"50px"}}>
                     <Box onClick={handleClick}>

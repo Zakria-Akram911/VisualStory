@@ -18,14 +18,14 @@ const CreateStoryMain : React.FC<CreateStoryMainProps> = ({formSubmitted, setFor
     const onStorylineClickHandler = () => {
         if (!isStorylineActive){
             setIsStorylineActive(true)
-            setFormSubmitted(false)
+            // setFormSubmitted(false)
         }
 
     }
     const onMainCharacterClickHandler = () => {
         if (isStorylineActive){
             setIsStorylineActive(false)
-            setFormSubmitted(false)
+            // setFormSubmitted(false)
             // console.log(isStorylineActive)
         }
     }
@@ -139,14 +139,16 @@ const CreateStoryMain : React.FC<CreateStoryMainProps> = ({formSubmitted, setFor
         {isStorylineActive ? (
             //Create a Story with Storyline
             <Box className="storyline-form" sx={{width:"100%"}}>
-                <CreateStoryWithStorylineForm formSubmitted={isStorylineActive ? formSubmitted : false} setFormSubmitted={setFormSubmitted} />
+                {/* <CreateStoryWithStorylineForm formSubmitted={isStorylineActive ? formSubmitted : false} setFormSubmitted={setFormSubmitted} /> */}
+                <CreateStoryWithStorylineForm formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted} />
             </Box>
         ): (
             // Create a new Character
             <Box className="main-character-form" sx={{width: "100%"}}>
-                <CreateNewCharacterForm formSubmitted={isStorylineActive ? false : formSubmitted} 
+                <CreateNewCharacterForm formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}/>
+                {/* <CreateNewCharacterForm formSubmitted={isStorylineActive ? false : formSubmitted} 
                 setFormSubmitted={setFormSubmitted}
-                />
+                /> */}
             </Box>
         )}
     </Box>

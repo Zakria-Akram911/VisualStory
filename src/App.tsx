@@ -5,7 +5,7 @@ import './App.css'
 import LandingPage from './Pages/LandingPage'
 import Visualizer from './Pages/Visualizer'
 import CreateStory from './Pages/CreateStory'
-import SavedPage from './Pages/SavedPage'
+import SavedStoriesPage from './Pages/SavedStoriesPage'
 import StoryOutput from './Pages/StoryOutput'
 import PaymentAndSubscription from './Pages/PaymentAndSubscription'
 
@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/visualizer' element={<Visualizer />} />
         <Route path='/create-new-story' element={<CreateStory />} />
-        <Route path='/saved-stories' element={<SavedPage />} />
+        <Route path='/my-stories' element={<SavedStoriesPage />} />
         <Route path='/your-story/:id' element={<StoryOutput />} />
         <Route path='/pricing' element={<PaymentAndSubscription />} />
       </Routes>

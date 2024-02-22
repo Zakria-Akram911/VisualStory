@@ -1,0 +1,9 @@
+.search-bar input::placeholder{
+    opacity: 1;
+}
+
+@media(max-width: 900px){
+    .search-bar input::placeholder{
+        font-size: 14px;
+    }
+}

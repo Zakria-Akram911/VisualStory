@@ -11,7 +11,7 @@ interface formData {
 
 interface CreateStoryWithStorylineFormProps {
     formSubmitted: boolean;
-    setFormSubmitted:  (value:boolean) => void, 
+    setFormSubmitted:  any, 
 }
 
 const CreateStoryWithStorylineForm : React.FC<CreateStoryWithStorylineFormProps> = ({formSubmitted, setFormSubmitted}) => {

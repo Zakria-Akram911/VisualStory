@@ -13,7 +13,7 @@ const VisualizerMain = () => {
         navigate("/create-new-story")
     }   
     const savedClicked = () => {
-        navigate("/saved-stories")
+        navigate("/my-stories")
     }
   return (
     <Box className="visualizerMain" sx={{mt:"20px"}}>
