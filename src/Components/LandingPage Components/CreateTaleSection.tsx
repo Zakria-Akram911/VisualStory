@@ -1,13 +1,15 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import CustomizeButton from "../CustomizeButton";
 import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import image3 from "../../assets/image3.png";
+import { useNavigate } from "react-router";
 
 const CreateTaleSection = () => {
   const mediumScreen = useMediaQuery(
     "(min-width:1201px) and (max-width:1512px)"
   );
+  const navigate = useNavigate();
   const gridItems = [
     {
       image: image1,
@@ -131,7 +133,11 @@ const CreateTaleSection = () => {
           </Grid>
         ))}
       </Grid>
-      <CustomizeButton buttontext="Begin Your Magical Storytelling Adventure!" />
+      <Box>
+        <Button onClick={()=> navigate('/create-new-story')}>
+          <CustomizeButton buttontext="Begin Your Magical Storytelling Adventure!" />
+        </Button>
+      </Box>
     </Box>
   );
 };

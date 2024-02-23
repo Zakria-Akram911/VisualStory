@@ -74,8 +74,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
           <>
           <NavLink 
             to={page.link}
-            style={({isActive})=>{
-              return{
+            style={{
                 color:"#A9895D",
                 fontSize: index=== 0 ? "18px" : mediumScreen ? "14px" : "16px",
                 fontWeight: index=== 0 ?  900 : 400,
@@ -84,8 +83,8 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
                 marginLeft: index === 0 ? "0" : "20px",
                 cursor: "pointer",
                 textDecoration:"none"
-              }
-            }}
+              }}
+            
           >
               <Typography
                 key={page.title}

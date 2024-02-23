@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import Layout from "../Pages/LayoutPages";
 import CustomizeButton from "../Components/CustomizeButton";
 import creativityOneImage from "../assets/creativity.png";
@@ -15,12 +15,14 @@ import NavBar from "../Components/NavBar";
 import linedecor1 from '../assets/lineDecor1.svg';
 import linedecor2 from '../assets/lineDecor2.svg';
 import rock from '../assets/rock.png';
+import { useNavigate } from "react-router";
 
 const LandingPage = () => {
   const isMobile = useMediaQuery("(max-width:1200px)");
   const mediumScreen = useMediaQuery(
     "(min-width:1201px) and (max-width:1512px)"
   );
+  const navigate = useNavigate();
 
   const gridsItemsContents = [
     {
@@ -95,8 +97,9 @@ const LandingPage = () => {
             one-on-one time through delightful storytelling they can’t get
             enough of.
           </Typography>
-
-          <CustomizeButton buttontext="Create Now!" />
+          <Button onClick={()=> navigate('/create-new-story')}>
+            <CustomizeButton buttontext="Create Now!" />
+          </Button>
         </Box>
         <Box
           sx={{
@@ -283,8 +286,9 @@ const LandingPage = () => {
             display:"flex",
             justifyContent:"center"
           }}> */}
-           
+           <Button onClick={()=> navigate('/create-new-story')}>
               <CustomizeButton buttontext="Try Now!" />
+            </Button>
               {/* </Box> */}
            
         </Box>
@@ -374,7 +378,9 @@ const LandingPage = () => {
                 transform: "translateX(-50%)", // Center horizontally
               }}
             >
-              <CustomizeButton buttontext="Get Started!" />
+              <Button onClick={()=> navigate('/create-new-story')}>
+                <CustomizeButton buttontext="Get Started!" />
+              </Button>
             </Box>
           {/* </Box> */}
         </Box>
