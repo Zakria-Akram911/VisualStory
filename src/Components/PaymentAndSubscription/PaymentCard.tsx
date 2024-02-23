@@ -1,7 +1,7 @@
 import { Box, ListItem, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material';
 import React from 'react'
-import cardBg from "../../assets/payment-card-bg.png"
-import priceImage from "../../assets/price-0.png"
+// import cardBg from "../../assets/payment-card-bg.png"
+// import priceImage from "../../assets/price-0.png"
 import listIcon from "../../assets/list-icon.png"
 import CustomizeButton from '../CustomizeButton';
 

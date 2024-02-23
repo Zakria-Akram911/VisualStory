@@ -2,14 +2,14 @@ import NavBar from "../Components/NavBar"
 import PaymentAndSubscriptionMain from "../Components/PaymentAndSubscription/PaymentAndSubscriptionMain"
 import Layout from "./LayoutPages"
 import bgImage from "../assets/payment-bg.png"
-import { Box, useMediaQuery } from "@mui/material"
+import { Box } from "@mui/material"
 import mountainRocks from "../assets/mountainRocks.png"
 import tree from "../assets/tree.png"
 
 
 const PaymentAndSubscription = () => {
-  const isMobile = useMediaQuery("(max-width:900px)");
-    const mediumScreen = useMediaQuery("(min-width:901px) and (max-width:1501px)");
+  // const isMobile = useMediaQuery("(max-width:900px)");
+  //   const mediumScreen = useMediaQuery("(min-width:901px) and (max-width:1501px)");
   return (
     <Layout>
       <NavBar background={bgImage}>

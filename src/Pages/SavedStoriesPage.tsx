@@ -4,7 +4,7 @@ import bgImage from "../assets/saved-option-bg.png"
 import sectionBgImage from "../assets/saved-section-bg.png"
 import { Box, Button, Divider, Grid, InputBase, useMediaQuery } from "@mui/material"
 import MyStories from "../Components/SavedStoriesPage/MyStories"
-import React from "react"
+import React, { useEffect } from "react"
 import MyCharacters from "../Components/SavedStoriesPage/MyCharacters"
 import imgUrl1 from "../assets/my-stories-img1.png"
 import imgUrl2 from "../assets/my-stories-img2.png"
@@ -31,7 +31,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled('div')(() => ({
   // padding: theme.spacing(0, 2),
   color:"#B89056",
   padding:"20px 10px",
@@ -145,6 +145,14 @@ const SavedStoriesPage = () => {
     //   setMyFilteredStories(filteredStories);
     // }
   }
+
+  const getAllStories = ()=>{setMyStories(myStories)}
+  const getAllCharacters = ()=>{setMyCharacters(myCharacters)}
+
+  useEffect(()=>{
+    getAllStories()
+    getAllCharacters()
+  })
 
 
   const myStoriesClickHandler = () =>{
