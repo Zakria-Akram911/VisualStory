@@ -170,7 +170,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
           sx={{
             color: "#6E4500",
             fontFamily: "IM FELL English",
-            fontSize: isMobile ? "12px":"16px",
+            fontSize: isMobile ? "10px":"12px",
             textTransform: 'none',
             fontWeight: 400,
            

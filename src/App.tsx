@@ -23,7 +23,7 @@ function App() {
         <Route path='/my-stories' element={<SavedStoriesPage />} />
         <Route path='/your-story/:id' element={<StoryOutput />} />
         <Route path='/pricing' element={<PaymentAndSubscription />} />
-        <Route path='demo' element={<Demo />} />
+        <Route path='/demo' element={<Demo />} />
       </Routes>
     </BrowserRouter>
    {/* <LandingPage/> */}
