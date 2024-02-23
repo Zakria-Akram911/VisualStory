@@ -1,5 +1,5 @@
 import { Box} from '@mui/material';
-import "../../utility/CreateStoryFormStyles.css"
+import "../../utility/createStoryFormStyles.css"
 import React from 'react';
 
 interface formData {
