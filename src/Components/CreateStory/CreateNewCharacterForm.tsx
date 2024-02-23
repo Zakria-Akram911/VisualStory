@@ -1,6 +1,6 @@
 import React from "react";
 import { Box} from '@mui/material';
-import "../../utility/CreateStoryFormStyles.css"
+import "../../utility/createStoryFormStyles.css"
 // import CustomizeButton from "../CustomizeButton";
 
 interface formData {
