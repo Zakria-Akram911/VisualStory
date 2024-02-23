@@ -16,3 +16,7 @@ body{
   /* font-family: "IM Fell English" !important;  */
   margin: 0;
 }
+
+.navLinks a.active>p{
+  font-weight: 900;
+}

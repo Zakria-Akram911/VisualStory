@@ -8,7 +8,7 @@ import {
   } from "@mui/material";
   import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const pages = 
   [
@@ -35,6 +35,7 @@ function NavBar({children, background}:any) {
     const isMobile = useMediaQuery('(max-width:900px)');
     const mediumScreen = useMediaQuery('(min-width:1201px) and (max-width:1512px)');
     const [anchorEl, setAnchorEl] = useState(null);
+    const navigate = useNavigate()
     
     const handleMenuOpen = (event: any) => {
       setAnchorEl(event.currentTarget);
@@ -68,31 +69,33 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
         
       }}
     >
-      <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+      <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} className="navLinks">
         {pages.map((page, index) => (
           <>
-          <Link 
+          <NavLink 
             to={page.link}
-            style={{
-              color: "#A9895D",
-              fontSize: index=== 0 ? "18px" : "16px",
-              fontWeight: index=== 0 ?  900 :400,
-              lineHeight:"20px",
-              marginRight: index === pages.length - 1 ? "0" : "20px",
-              marginLeft: index === 0 ? "0" : "20px",
-              cursor: "pointer",
-              textDecoration:"none"
+            style={({isActive})=>{
+              return{
+                color:"#A9895D",
+                fontSize: index=== 0 ? "18px" : mediumScreen ? "14px" : "16px",
+                fontWeight: index=== 0 ?  900 : 400,
+                lineHeight:"20px",
+                marginRight: index === pages.length - 1 ? "0" : "20px",
+                marginLeft: index === 0 ? "0" : "20px",
+                cursor: "pointer",
+                textDecoration:"none"
+              }
             }}
           >
               <Typography
                 key={page.title}
                 sx={{
-                  color: "#A9895D",
-                  fontSize: index=== 0 ? "18px" : "16px",
+                  // color: "#A9895D",
+                  fontSize: index=== 0 ? "18px" : mediumScreen ? "14px" : "16px",
                   fontWeight: index=== 0 ?  900 :400,
                   lineHeight:"20px",
-                  marginRight: index === pages.length - 1 ? "0" : "20px",
-                  marginLeft: index === 0 ? "0" : "20px",
+                  marginRight: index === pages.length - 1 ? "0" : mediumScreen ? "10px" :"20px",
+                  marginLeft: index === 0 ? "0" : mediumScreen ? "10px" : "20px",
                   cursor: "pointer",
                   "&:hover": {
                     color: "#5C4033",
@@ -101,7 +104,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
               >
                 {page.title}
               </Typography>
-            </Link>
+            </NavLink>
             <span style={{ color: "#A9895D" }}>
               {index !== pages.length - 1 && "|"}
             </span>
@@ -123,19 +126,21 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
       >
         {pages.map((page) => (
           <MenuItem key={page.title} onClick={handleMenuClose}>
-            <Link 
+            <NavLink 
               to={page.link}
-              style={{
-                color: "#A9895D",
-                fontSize: "16px",
-                fontWeight: 400,
-                cursor: "pointer",
-                textDecoration:"none"
+              style={({isActive})=>{
+                return{
+                  color:isActive ?"red" : "#A9895D",
+                  fontSize: "16px",
+                  fontWeight: isActive ? 900 : 400,
+                  cursor: "pointer",
+                  textDecoration:"none"
+                }
               }}
             >
               <Typography
                 sx={{
-                  color: "#A9895D",
+                  // color: "#A9895D",
                   fontSize: "16px",
                   fontWeight: 400,
                   cursor: "pointer",
@@ -146,7 +151,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
               >
                 {page.title}
               </Typography>
-            </Link>
+            </NavLink>
           </MenuItem>
         ))}
       </Menu>
@@ -165,6 +170,7 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
               bgcolor:"#CF9D54"
             }
           }}
+          onClick={()=> navigate('/create-new-story')}
       >
         <Typography
           sx={{
