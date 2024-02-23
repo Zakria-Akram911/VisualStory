@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
 *{
   padding: 0;
-  font-family: 'IM Fell English' !important;
+  /* font-family: 'IM Fell English' !important; */
   box-sizing: border-box; 
 }
 
