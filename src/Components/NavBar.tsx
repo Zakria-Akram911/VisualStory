@@ -76,11 +76,6 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
             to={page.link}
             style={{
                 color:"#A9895D",
-                fontSize: index=== 0 ? "18px" : mediumScreen ? "14px" : "16px",
-                fontWeight: index=== 0 ?  900 : 400,
-                lineHeight:"20px",
-                marginRight: index === pages.length - 1 ? "0" : "20px",
-                marginLeft: index === 0 ? "0" : "20px",
                 cursor: "pointer",
                 textDecoration:"none"
               }}
@@ -90,11 +85,11 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
                 key={page.title}
                 sx={{
                   // color: "#A9895D",
-                  fontSize: index=== 0 ? "18px" : mediumScreen ? "14px" : "16px",
+                  fontSize: index=== 0 ? "14px" : mediumScreen ? "12px" : "12px",
                   fontWeight: index=== 0 ?  900 :400,
                   lineHeight:"20px",
-                  marginRight: index === pages.length - 1 ? "0" : mediumScreen ? "10px" :"20px",
-                  marginLeft: index === 0 ? "0" : mediumScreen ? "10px" : "20px",
+                  marginRight: index === pages.length - 1 ? "0" : mediumScreen ? "10px" :"10px",
+                  marginLeft: index === 0 ? "0" : mediumScreen ? "10px" : "10px",
                   cursor: "pointer",
                   "&:hover": {
                     color: "#5C4033",
