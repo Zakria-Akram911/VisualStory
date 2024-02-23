@@ -85,11 +85,11 @@ sx={{display:"flex",justifyContent:"center" , alignItems:"center",p:"45px"}}>
                 key={page.title}
                 sx={{
                   // color: "#A9895D",
-                  fontSize: index=== 0 ? "14px" : mediumScreen ? "12px" : "12px",
+                  fontSize: index=== 0 ? "16px" : mediumScreen ? "12px" : "14px",
                   fontWeight: index=== 0 ?  900 :400,
                   lineHeight:"20px",
-                  marginRight: index === pages.length - 1 ? "0" : mediumScreen ? "10px" :"10px",
-                  marginLeft: index === 0 ? "0" : mediumScreen ? "10px" : "10px",
+                  marginRight: index === pages.length - 1 ? "0" : mediumScreen ? "10px" :"20px",
+                  marginLeft: index === 0 ? "0" : mediumScreen ? "10px" : "20px",
                   cursor: "pointer",
                   "&:hover": {
                     color: "#5C4033",

@@ -8,6 +8,7 @@ import CreateStory from './Pages/CreateStory'
 import SavedStoriesPage from './Pages/SavedStoriesPage'
 import StoryOutput from './Pages/StoryOutput'
 import PaymentAndSubscription from './Pages/PaymentAndSubscription'
+import Demo from './Pages/Demo'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/my-stories' element={<SavedStoriesPage />} />
         <Route path='/your-story/:id' element={<StoryOutput />} />
         <Route path='/pricing' element={<PaymentAndSubscription />} />
+        <Route path='demo' element={<Demo />} />
       </Routes>
     </BrowserRouter>
    {/* <LandingPage/> */}
