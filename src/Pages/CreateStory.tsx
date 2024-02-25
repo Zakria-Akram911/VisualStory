@@ -9,15 +9,18 @@ import React from "react"
 import treebg from "../assets/tree.png"
 import rock from "../assets/rock.png"
 import mountainRock from "../assets/mountainRocks.png"
+import { useNavigate } from "react-router"
 
 
 const CreateStory = () => {
     const [formSubmitted, setFormSubmitted] = React.useState<boolean>(false)
     const isMobile = useMediaQuery("(max-width: 900px)");
+    const navigate = useNavigate()
     // const isMedium = useMediaQuery("(min-width: 901px) and (max-width: 1501px)")
     const handleClick = (e: any)=>{
         setFormSubmitted(true)
         console.log(formSubmitted)
+        navigate('/my-stories')
         e.preventDefault()
     }
   return (

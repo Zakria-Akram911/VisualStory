@@ -20,3 +20,11 @@ body{
 .navLinks a.active>p{
   font-weight: 900;
 }
+
+/* .stf__item{
+  margin-right: 100px;
+} */
+
+/* .stf__block .stf__item:nth-child(even){
+  left: 600px !important;
+} */
