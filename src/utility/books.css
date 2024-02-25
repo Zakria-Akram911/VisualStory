@@ -61,4 +61,8 @@
     .page{
         padding-left: 20px !important;
     }
+
+    .page.stf__item.--soft.--simple.--right{
+      width:300px
+    }
 }
