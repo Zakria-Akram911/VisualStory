@@ -1,6 +1,6 @@
 import { Box, Button, Grid, useMediaQuery } from "@mui/material";
 import StoryOutputButton from "./StoryOutputButton";
-import bookImage from "../../assets/story-output-book.png";
+// import bookImage from "../../assets/story-output-book.png";
 import imageUrl1 from "../../assets/story-output-image1.png";
 import React, { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";

@@ -9,11 +9,11 @@
   }
 
   .page:nth-child(odd){
-    padding-left: 60px;
+    padding: 0px 30px;
   }
 
   .page:nth-child(even){
-    padding-left: 60px;
+    padding: 0px 30px;
   }
 
   /* .page:nth-child(even) .page-content{

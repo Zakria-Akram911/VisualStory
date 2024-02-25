@@ -4,25 +4,25 @@ import bgImage from "../assets/create-story-bg-main.png"
 import NavBar from "../Components/NavBar"
 import CreateStoryMain from "../Components/CreateStory/CreateStoryMain"
 import Layout from "./LayoutPages"
-import CustomizeButton from "../Components/CustomizeButton"
-import React from "react"
+// import CustomizeButton from "../Components/CustomizeButton"
+// import React from "react"
 import treebg from "../assets/tree.png"
 import rock from "../assets/rock.png"
 import mountainRock from "../assets/mountainRocks.png"
-import { useNavigate } from "react-router"
+// import { useNavigate } from "react-router"
 
 
 const CreateStory = () => {
-    const [formSubmitted, setFormSubmitted] = React.useState<boolean>(false)
-    const navigate = useNavigate()
+    // const [formSubmitted, setFormSubmitted] = React.useState<boolean>(false)
+    // const navigate = useNavigate()
     const isMobile = useMediaQuery("(max-width: 900px)");
     // const isMedium = useMediaQuery("(min-width: 901px) and (max-width: 1501px)")
-    const handleClick = (e: any)=>{
-        setFormSubmitted(true)
-        console.log(formSubmitted)
-        navigate('/my-stories')
-        e.preventDefault()
-    }
+    // const handleClick = (e: any)=>{
+    //     setFormSubmitted(true)
+    //     console.log(formSubmitted)
+    //     navigate('/my-stories')
+    //     e.preventDefault()
+    // }
   return (
     <Layout>
     <NavBar background={bgImage}>
