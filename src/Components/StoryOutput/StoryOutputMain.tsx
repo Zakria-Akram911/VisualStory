@@ -114,7 +114,7 @@ const StoryOutputMain = (props: any) => {
       </Box>
       <Box
         sx={{
-          maxWidth: "1000px",
+          maxWidth: "1050px",
           m: "0 auto",
           background: `url(${bookImage})`,
           backgroundSize: "cover",
