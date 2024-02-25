@@ -114,7 +114,7 @@ const StoryOutputMain = (props: any) => {
       </Box>
       <Box
         sx={{
-          maxWidth: "1100px",
+          maxWidth: "1000px",
           m: "0 auto",
           background: `url(${bookImage})`,
           backgroundSize: "cover",
@@ -127,7 +127,7 @@ const StoryOutputMain = (props: any) => {
           <HTMLFlipBook
             {...props}
             ref={bookRef}
-            width={isMobile ? 350 : mediumScreen? 400 : 430}
+            width={isMobile ? 350 : mediumScreen? 400 : 500}
             height={isMobile ? 600 : 733}
             useMouseEvents={false}
           >
