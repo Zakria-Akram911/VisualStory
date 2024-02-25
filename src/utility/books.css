@@ -2,7 +2,10 @@
     position: relative;
     overflow: hidden;
     margin: 10px;
-    background-color: transparent;
+    background-color: #ede1c7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .page:nth-child(odd){

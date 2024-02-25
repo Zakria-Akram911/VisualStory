@@ -14,8 +14,8 @@ import { useNavigate } from "react-router"
 
 const CreateStory = () => {
     const [formSubmitted, setFormSubmitted] = React.useState<boolean>(false)
-    const isMobile = useMediaQuery("(max-width: 900px)");
     const navigate = useNavigate()
+    const isMobile = useMediaQuery("(max-width: 900px)");
     // const isMedium = useMediaQuery("(min-width: 901px) and (max-width: 1501px)")
     const handleClick = (e: any)=>{
         setFormSubmitted(true)
@@ -30,13 +30,13 @@ const CreateStory = () => {
             <Box sx={{width: isMobile ? "90%" : "80%", zIndex:2}}>
                 {/* Main Component for the Page Content */}
                 {/* <CreateStoryMain  formSubmitted={formSubmitted} setFormSubmitted= {setFormSubmitted}/> */}
-                <CreateStoryMain  formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}/>
+                <CreateStoryMain />
 
-                <Box sx={{textAlign:"center", mt:"50px"}}>
+                {/* <Box sx={{textAlign:"center", mt:"50px"}}>
                     <Box onClick={handleClick}>
-                    <CustomizeButton buttontext = "GENERATE"  />
+                        <CustomizeButton buttontext = "GENERATE"  />
                     </Box>
-                </Box>
+                </Box> */}
                 <Box 
                     component="img" 
                     src={treebg}

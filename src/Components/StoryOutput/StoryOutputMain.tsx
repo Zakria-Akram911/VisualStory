@@ -116,7 +116,7 @@ const StoryOutputMain = (props: any) => {
         sx={{
           maxWidth: "1050px",
           m: "0 auto",
-          background: `url(${bookImage})`,
+          // background: `url(${bookImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
