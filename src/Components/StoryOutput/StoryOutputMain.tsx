@@ -127,7 +127,7 @@ const StoryOutputMain = (props: any) => {
           <HTMLFlipBook
             {...props}
             ref={bookRef}
-            width={isMobile ? 350 : mediumScreen? 500 : 500}
+            width={isMobile ? 350 : mediumScreen? 480 : 480}
             height={isMobile ? 600 : 733}
             useMouseEvents={false}
           >
