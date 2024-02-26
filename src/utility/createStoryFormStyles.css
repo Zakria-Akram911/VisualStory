@@ -24,3 +24,8 @@
     /* border-color: blue; */
     outline: none;
 }
+
+.create-story-with-storyline-textfield option{
+    background-color: rgb(231, 209, 161);
+    color: #252525;
+}

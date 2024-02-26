@@ -26,7 +26,7 @@ const CreateNewCharacterForm : React.FC<CreateNewCharacterFormProps> = ({formSub
         checked: false
     })
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement> ): void => {
+    const handleChange = (e: any): void => {
         const {name, value, type} = e.target
         if(type == 'checkbox'){
             setFormData(prevState => ({
@@ -59,62 +59,94 @@ const CreateNewCharacterForm : React.FC<CreateNewCharacterFormProps> = ({formSub
                 <label>
                     Gender for the character
                 </label>
-                <input 
-                    type="text" 
+                <select  
                     className="create-story-with-storyline-inputfield"
                     name='gender'
                     value={formData.gender}
                     onChange={handleChange}
-
-                    />
+                    >
+                        <option selected disabled></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="rather-not-say">Rather not say</option>
+                    </select>
             </Box>
             <Box className="create-story-with-storyline-textfield">
                 <label>
                     Age
                 </label>
-                <input 
-                    type="number" 
+                <select 
                     className="create-story-with-storyline-inputfield"
                     name="age"
                     value={formData.age <= 0 ? "" : formData.age}
                     onChange={handleChange}
-                    />
+                    >
+                        <option selected disabled></option>
+                        <option value="1-10">Between 1-10 years</option>
+                        <option value="11-20">Between 11-20 years</option>
+                        <option value="21-30">Between 21-30 years</option>
+                        <option value="31-40">Between 31-40 years</option>
+                        <option value="41-50">Between 41-50 years</option>
+                        <option value="50+">50+ years</option>
+                    </select>
             </Box>
             <Box className="create-story-with-storyline-textfield">
                 <label>
                     Skin Color
                 </label>
-                <input 
-                    type="text" 
+                <select
                     className="create-story-with-storyline-inputfield"
                     name='skinColor'
                     value={formData.skinColor}
                     onChange={handleChange}
-                    />
+                    > 
+                        <option selected disabled></option>
+                        <option value="white">White</option>
+                        <option value="brown">Brown</option>
+                        <option value="dark-brown">Dark Brown</option>
+                        <option value="beige">Beige</option>
+                        <option value="honey">Honey</option>
+                        <option value="umber">Umber</option>
+                        <option value="golden">Golden</option>
+                        <option value="rather-not-say">Rather not say</option>
+                </select>
             </Box>
             <Box className="create-story-with-storyline-textfield">
                 <label>
                     Eye colour
                 </label>
-                <input 
-                    type="text" 
+                <select 
                     className="create-story-with-storyline-inputfield"
                     name="eyeColor"
                     value={formData.eyeColor}
                     onChange={handleChange}
-                    />
+                    >
+                        <option selected disabled></option>
+                        <option value="black">Black</option>
+                        <option value="brown">Brown</option>
+                        <option value="dark-brown">Dark Brown</option>
+                        <option value="beige">Beige</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="golden">Golden</option>
+                    </select>
             </Box>
             <Box className="create-story-with-storyline-textfield">
                 <label>
                     Select Region
                 </label>
-                <input 
-                    type="text"  
+                <select   
                     className="create-story-with-storyline-inputfield"
                     name="selectRegion"
                     value={formData.selectRegion}
                     onChange={handleChange}
-                    />
+                    >
+                        <option selected disabled></option>
+                        <option value="american">American</option>
+                        <option value="european">European</option>
+                        <option value="asian">Asian</option>
+                        <option value="austrailian">Austrailian</option>
+                    </select>
             </Box>
             <Box className="create-story-with-storyline-textfield" sx={{display:"flex", gap:"10px", alignItems:"center",}}>
                 <input 
