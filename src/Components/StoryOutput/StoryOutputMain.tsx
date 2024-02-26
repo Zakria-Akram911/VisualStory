@@ -2,7 +2,7 @@ import { Box, Button, Grid, useMediaQuery } from "@mui/material";
 import StoryOutputButton from "./StoryOutputButton";
 // import bookImage from "../../assets/story-output-book.png";
 import imageUrl1 from "../../assets/story-output-image1.png";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import "../../utility/books.css";
 
@@ -70,22 +70,22 @@ const StoryOutputMain = (props: any) => {
   const mediumScreen = useMediaQuery(
     "(min-width:901px) and (max-width:1501px)"
   );
-  
+
   const bookRef = useRef<any>();
 
-  const handleFlip = (index: number) => {
-    if (index % 2 === 0) {
-      bookRef.current.pageFlip().flipNext();
-    } else {
-      bookRef.current.pageFlip().flipPrev();
-    }
-  };
+  // const handleFlip = (index: number) => {
+  //   if (index % 2 === 0) {
+  //     bookRef.current.pageFlip().flipNext();
+  //   } else {
+  //     bookRef.current.pageFlip().flipPrev();
+  //   }
+  // };
 
   const flipNext = () => {
-    bookRef.current.pageFlip().flipNext("top");
+    bookRef.current.pageFlip().flipNext();
   };
   const flipPrev = () => {
-    bookRef.current.pageFlip().flipPrev("bottom");
+    bookRef.current.pageFlip().flipPrev();
   };
 
   return (
@@ -131,14 +131,13 @@ const StoryOutputMain = (props: any) => {
             maxHeight={1533}
             mobileScrollSupport={true}
             useMouseEvents={false}
-            // disableFlipByClick={true}
             >
             {pages.map((item: IPage) => (
               <div
                 className="page"
-                onClick={() => {
-                  handleFlip(item.pageNumber);
-                }}
+                // onClick={() => {
+                //   handleFlip(item.pageNumber);
+                // }}
               >
                 {item.pageNumber % 2 === 1 ? (
                   <div className="page-content">
