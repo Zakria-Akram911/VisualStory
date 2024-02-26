@@ -66,7 +66,6 @@ const pages: IPage[] = [
 ];
 
 const StoryOutputMain = (props: any) => {
-  // const [data, setData] = React.useState(apiData);
   const isMobile = useMediaQuery("(max-width: 900px)");
   const mediumScreen = useMediaQuery(
     "(min-width:901px) and (max-width:1501px)"
@@ -128,9 +127,7 @@ const StoryOutputMain = (props: any) => {
             {...props}
             ref={bookRef}
             width={isMobile ? 350 : 500}
-            height={isMobile ? 600 : 733}
-            useMouseEvents={false}
-          >
+            height={isMobile ? 600 : 733}>
             {pages.map((item: IPage) => (
               <div
                 className="page"
