@@ -70,21 +70,14 @@ const StoryOutputMain = (props: any) => {
   const mediumScreen = useMediaQuery(
     "(min-width:901px) and (max-width:1501px)"
   );
-  const textAreaRefs = useRef<any>([]);
+  
   const bookRef = useRef<any>();
-
-  if (textAreaRefs.current.length !== pages.length) {
-    textAreaRefs.current = Array.from(
-      { length: pages.length },
-      (_, i) => textAreaRefs.current[i] || React.createRef()
-    );
-  }
 
   const handleFlip = (index: number) => {
     if (index % 2 === 0) {
-      bookRef.current.pageFlip().flipNext("bottom");
+      bookRef.current.pageFlip().flipNext();
     } else {
-      bookRef.current.pageFlip().flipPrev("bottom");
+      bookRef.current.pageFlip().flipPrev();
     }
   };
 
@@ -127,7 +120,19 @@ const StoryOutputMain = (props: any) => {
             {...props}
             ref={bookRef}
             width={isMobile ? 350 : 500}
-            height={isMobile ? 600 : 733}>
+            height={isMobile ? 550 : 733} 
+            //className={""} style={{}} startPage={0} size={"fixed"} minWidth={0} maxWidth={0} minHeight={0} maxHeight={0} drawShadow={false} flippingTime={1000} usePortrait={false} startZIndex={0} autoSize={false} maxShadowOpacity={0} showCover={false} mobileScrollSupport={false} clickEventForward={false} useMouseEvents={false} swipeDistance={0} showPageCorners={false} disableFlipByClick={false}
+            // width={550}
+            // height={733}
+            size="stretch"
+            minWidth={315}
+            maxWidth={1000}
+            minHeight={400}
+            maxHeight={1533}
+            mobileScrollSupport={true}
+            useMouseEvents={false}
+            // disableFlipByClick={true}
+            >
             {pages.map((item: IPage) => (
               <div
                 className="page"

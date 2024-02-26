@@ -47,7 +47,7 @@ const CreateStoryWithStorylineForm : React.FC<CreateStoryWithStorylineFormProps>
                 </label>
                 <textarea 
                     className="create-story-with-storyline-textarea" 
-                    rows={7} 
+                    rows={10} 
                     style={{resize: "none"}}
                     name="topic"
                     value={formData.topic}

@@ -63,15 +63,15 @@
     }
 
     .stf__parent{
-      min-height: 100vh !important;
-      width: 100vw !important;
+      /* min-height: 100vh !important; */
+      width: 97vw !important;
     }
 
     .page.stf__item.--soft.--simple.--right{
-      width:100vw !important;
-      height: 100vh !important;
-      left: 0 !important;
-      margin: 0;
-      top: 0 !important ;
+      width:97vw !important;
+      /* height: 100vh !important; */
+      /* left: 0 !important; */
+      /* margin: 0; */
+      /* top: 0 !important ; */
     }
 }
