@@ -1,8 +1,6 @@
 import { Box, Button, Grid, useMediaQuery, Typography } from "@mui/material";
-// import StoryOutputButton from "./StoryOutputButton";
-// import bookImage from "../../assets/story-output-book.png";
 import imageUrl1 from "../../assets/story-output-image1.png";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import "../../utility/books.css";
 
@@ -70,46 +68,32 @@ const StoryOutputMain = (props: any) => {
   const mediumScreen = useMediaQuery(
     "(min-width:901px) and (max-width:1501px)"
   );
-
-  console.log("render");
+  const [disableNext, setDisableNext] = React.useState<number>(0)
+  const [disablePrev, setDisablePrev] = React.useState<number>(0)
   const bookRef = useRef<any>();
 
-  // const handleFlip = (index: number) => {
-  //   if (index % 2 === 0) {
-  //     bookRef.current.pageFlip().flipNext();
-  //   } else {
-  //     bookRef.current.pageFlip().flipPrev();
-  //   }
-  // };
-
-  // console.log(bookRef.current.pageFlip().pages)
-  const flipNext = (e: any) => {
-    e.preventDefault();
-    // console.log(pages.length)
-    // console.log(bookRef.current.pageFlip())
-    // console.log(bookRef.current.pageFlip().pages.currentPageIndex)
-    // setCurrentPage(
-    //   pages.length - bookRef.current.pageFlip().pages.currentPageIndex
-    // );
-    console.log(bookRef.current.pageFlip());
+  //Function to flip to next page
+  const flipNext = () => {
     bookRef.current.pageFlip().flipNext();
-    // bookRef.current.pageFlip().getFlipController().flipToPage(bookRef.current.pageFlip().pages.currentPageIndex + 1)
-    // bookRef.current.pageFlip().render.boundsRect.height = 100
-    // console.log(bookRef.current.pageFlip().render.boundsRect.top);
-  };
-  const flipPrev = () => {
-    // setCurrentPage(bookRef.current.pageFlip().pages.currentPageIndex);
-    bookRef.current.pageFlip().flipPrev();
+    //setTimeout is used as the pageIndex is updated after the animation is completed
+    //so we have to set the time for timeout function equal to flipping time used in 
+    //the HTMLFlipBook component. So, the page index would be updated in state 
+    //after the library updates it.
+    setTimeout(() => {
+      setDisableNext(bookRef.current.pageFlip().getCurrentPageIndex());
+      setDisablePrev(bookRef.current.pageFlip().getCurrentPageIndex());
+    }, 1000);
   };
 
-  // const handleFlip = (index: number) => {
-  //   console.log(index)
-  //   if (index % 2 === 0) {
-  //     bookRef.current.pageFlip().flipNext("top");
-  //   } else {
-  //     bookRef.current.pageFlip().flipPrev("bottom");
-  //   }
-  // };
+  //Function to flip to previous page
+  const flipPrev = async() => {
+    await bookRef.current.pageFlip().flipPrev();
+    //setTimeout serves the same purpose as serves in flipNext
+    setTimeout(() => {
+      setDisablePrev(bookRef.current.pageFlip().getCurrentPageIndex());
+      setDisableNext(bookRef.current.pageFlip().getCurrentPageIndex());
+    }, 1000);
+  };
 
   return (
     <Box className="story-output-main">
@@ -126,6 +110,7 @@ const StoryOutputMain = (props: any) => {
                   bgcolor: "#5C4033",
                 },
               }}
+              disabled={disablePrev === 0 ? true : false}
               onClick={flipPrev}
             >
               <Box
@@ -133,7 +118,7 @@ const StoryOutputMain = (props: any) => {
                   width: isMobile ? "100px" : mediumScreen ? "200px" : "270px",
                   borderRadius: "9px",
                   border: "3px solid #A67334",
-                  background: "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
+                  background: disablePrev === 0 ? "transperant" : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
                 }}
               >
                 <Typography
@@ -170,14 +155,15 @@ const StoryOutputMain = (props: any) => {
                   bgcolor: "#5C4033",
                 },
               }}
-              onClick={(e) => flipNext(e)}
+              disabled={disableNext + 2 === pages.length ? true : false}
+              onClick={flipNext}
             >
               <Box
                 sx={{
                   width: isMobile ? "100px" : mediumScreen ? "200px" : "270px",
                   borderRadius: "9px",
                   border: "3px solid #A67334",
-                  background:"var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
+                  background: disableNext + 2 === pages.length  ? "transperant" : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
                 }}
               >
                 <Typography
@@ -227,7 +213,7 @@ const StoryOutputMain = (props: any) => {
             maxHeight={1533}
             mobileScrollSupport={true}
             usePortrait={true}
-            flippingTime={1500}
+            flippingTime={isMobile ? 1500 : 1000}
             disableFlipByClick={false}
             useMouseEvents={true}
           >
