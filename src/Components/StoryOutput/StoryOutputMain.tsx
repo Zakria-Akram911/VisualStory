@@ -219,7 +219,7 @@ const StoryOutputMain = (props: any) => {
             {...props}
             ref={bookRef}
             width={isMobile ? 350 : 500}
-            height={isMobile ? 600 : 733}
+            height={isMobile ? 550 : 733}
             size="stretch"
             minWidth={300}
             maxWidth={1000}

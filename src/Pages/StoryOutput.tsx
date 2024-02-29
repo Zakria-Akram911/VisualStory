@@ -12,7 +12,6 @@ const StoryOutput = () => {
       <NavBar background={bgImage}>
         <Box
           sx={{
-            mt:"30px"
           }}
         >
           <StoryOutputMain />
