@@ -91,7 +91,7 @@ const StoryOutputMain = (props: any) => {
     // setCurrentPage(
     //   pages.length - bookRef.current.pageFlip().pages.currentPageIndex
     // );
-    console.log(bookRef.current.pageFlip().getPageCollection());
+    console.log(bookRef.current.pageFlip());
     bookRef.current.pageFlip().flipNext();
     // bookRef.current.pageFlip().getFlipController().flipToPage(bookRef.current.pageFlip().pages.currentPageIndex + 1)
     // bookRef.current.pageFlip().render.boundsRect.height = 100
@@ -249,7 +249,7 @@ const StoryOutputMain = (props: any) => {
             // width={550}
             // height={733}
             size="stretch"
-            minWidth={315}
+            minWidth={300}
             maxWidth={1000}
             minHeight={400}
             maxHeight={1533}
