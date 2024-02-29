@@ -64,6 +64,7 @@
 
     .stf__parent{
       /* min-height: 100vh !important; */
+      /* height: 100vh !important; */
       width: 97vw !important;
     }
 

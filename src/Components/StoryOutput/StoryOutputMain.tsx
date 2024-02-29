@@ -20,7 +20,7 @@ const pages: IPage[] = [
     title: "Jacob's Pirate Quest for the Golden Anchor",
     pageNumber: 1,
     pageContent:
-      "Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life.",
+      "Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life. Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life.",
     imgUrl: imageUrl1,
   },
   {
@@ -113,12 +113,9 @@ const StoryOutputMain = (props: any) => {
 
   return (
     <Box className="story-output-main">
-      <Box className="story-output-btns">
+      <Box className="story-output-btns" sx={{display: isMobile? "none": "inherit"}}>
         <Grid container columnGap={5} justifyContent="center" ref={bookRef}>
           <Grid item>
-            {/* <Button onClick={flipPrev}>
-              <StoryOutputButton buttontext="Previous" disabled={currentPage === 0 ? true: false}  />
-            </Button> */}
             <Button
               sx={{
                 borderRadius: "9px",
@@ -129,18 +126,13 @@ const StoryOutputMain = (props: any) => {
                   bgcolor: "#5C4033",
                 },
               }}
-              // disabled={(currentPage === 1 || currentPage === 0) ? true : false}
               onClick={flipPrev}
             >
               <Box
                 sx={{
-                  //   p: mediumScreen ? "0px 20px": isMobile?  "0px 10px":"0px 25px",
                   width: isMobile ? "100px" : mediumScreen ? "200px" : "270px",
                   borderRadius: "9px",
                   border: "3px solid #A67334",
-                  // background: (currentPage === 1|| currentPage === 0)
-                  //   ? "transparent"
-                  //   : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))",
                   background: "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
                 }}
               >
@@ -178,30 +170,13 @@ const StoryOutputMain = (props: any) => {
                   bgcolor: "#5C4033",
                 },
               }}
-              // disabled={
-              //   isMobile
-              //     ? currentPage === 2
-              //       ? true
-              //       : false
-              //     : currentPage === 4
-              //     ? true
-              //     : false
-              // }
               onClick={(e) => flipNext(e)}
             >
               <Box
                 sx={{
-                  //   p: mediumScreen ? "0px 20px": isMobile?  "0px 10px":"0px 25px",
                   width: isMobile ? "100px" : mediumScreen ? "200px" : "270px",
                   borderRadius: "9px",
                   border: "3px solid #A67334",
-                  // background: isMobile
-                  // ? currentPage === 2
-                  //   ? "transparent"
-                  //   : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
-                  // : currentPage === 4
-                  // ? "transparent"
-                  // : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))",
                   background:"var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))"
                 }}
               >
@@ -244,32 +219,21 @@ const StoryOutputMain = (props: any) => {
             {...props}
             ref={bookRef}
             width={isMobile ? 350 : 500}
-            height={isMobile ? 550 : 733}
-            //className={""} style={{}} startPage={0} size={"fixed"} minWidth={0} maxWidth={0} minHeight={0} maxHeight={0} drawShadow={false} flippingTime={1000} usePortrait={false} startZIndex={0} autoSize={false} maxShadowOpacity={0} showCover={false} mobileScrollSupport={false} clickEventForward={false} useMouseEvents={false} swipeDistance={0} showPageCorners={false} disableFlipByClick={false}
-            // width={550}
-            // height={733}
+            height={isMobile ? 730 : 733}
             size="stretch"
             minWidth={300}
             maxWidth={1000}
             minHeight={400}
             maxHeight={1533}
-            mobileScrollSupport={false}
-            // useMouseEvents={false}
+            mobileScrollSupport={true}
             usePortrait={true}
             flippingTime={1500}
             disableFlipByClick={false}
             useMouseEvents={true}
-            // onChangeOrientation={bookRef.current.onChangeOrientation}
           >
             {pages.map((item: IPage) => (
               <div
                 className="page"
-                // onClick={() => {
-                //   handleFlip(item.pageNumber);
-                // }}
-                // onClick={() => {
-                //   handleFlip(item.pageNumber);
-                // }}
               >
                 {item.pageNumber % 2 === 1 ? (
                   <div className="page-content">
