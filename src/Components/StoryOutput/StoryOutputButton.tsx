@@ -2,10 +2,11 @@ import { Box, Typography, Button, useMediaQuery } from "@mui/material"
 import React from "react"
 
 interface ButtonText {
-    buttontext: string
+    buttontext: string;
+    disabled?: boolean
 }
 
-const StoryOutputButton : React.FC<ButtonText> = ({buttontext}) => {
+const StoryOutputButton : React.FC<ButtonText> = ({buttontext, disabled}) => {
     const mediumScreen = useMediaQuery('(min-width:1201px) and (max-width:1512px)');
     const isMobile = useMediaQuery('(max-width:900px)');
   return (
@@ -19,6 +20,7 @@ const StoryOutputButton : React.FC<ButtonText> = ({buttontext}) => {
           bgcolor:"#5C4033"
         }
       }}
+      disabled={disabled? true: false}
     >
       <Box
         sx={{
@@ -27,7 +29,7 @@ const StoryOutputButton : React.FC<ButtonText> = ({buttontext}) => {
           borderRadius: "9px",
           border: "3px solid #A67334",
           background:
-            "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))",
+            disabled ? "transparent" : "var(--button-gold, linear-gradient(179deg, #E0B65D 25.23%, #F0D191 95.58%, rgba(255, 255, 255, 0.00) 183.3%))",
         }}
       >
         <Typography

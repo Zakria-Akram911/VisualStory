@@ -6,6 +6,7 @@ import { Box } from "@mui/material"
 
 
 const StoryOutput = () => {
+  console.log("story-output-page")
   return (
     <Layout>
       <NavBar background={bgImage}>
