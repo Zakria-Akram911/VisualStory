@@ -20,7 +20,7 @@ const pages: IPage[] = [
     title: "Jacob's Pirate Quest for the Golden Anchor",
     pageNumber: 1,
     pageContent:
-      "Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life. Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life.",
+      "Join Lily's tale of courage as her character embarks on a moonlit quest to save a magical creature. The captivating story unfolds under the glow of an enchanted moon, accompanied by images that vividly bring each scene to life.",
     imgUrl: imageUrl1,
   },
   {
@@ -219,7 +219,7 @@ const StoryOutputMain = (props: any) => {
             {...props}
             ref={bookRef}
             width={isMobile ? 350 : 500}
-            height={isMobile ? 730 : 733}
+            height={isMobile ? 600 : 733}
             size="stretch"
             minWidth={300}
             maxWidth={1000}
